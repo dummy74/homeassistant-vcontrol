@@ -3,7 +3,7 @@ name: Vcontrol add-on
 version: "1.8.4"
 slug: vcontrold
 description: Vcontrol add-on
-url: "https://github.com/Alexandre-io/homeassistant-vcontrol"
+url: "https://github.com/dummy74/homeassistant-vcontrol"
 arch:
   - armhf
   - armv7
@@ -14,7 +14,7 @@ init: false
 options:
   tty: "/dev/ttyUSB0"
   refresh: 30
-  device_id: "2098"
+  device_id: "20c2"
   mqtt_topic: "openv"
   debug: false
   commands:
