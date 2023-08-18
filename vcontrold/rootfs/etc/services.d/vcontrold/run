@@ -45,6 +45,12 @@ do
     echo 'fi' >> /etc/vcontrold/2_mqtt.tmpl
 done
 
+echo 'ls /etc'
+ls /etc
+
+echo 'ls /etc/vcontrold'
+ls /etc/vcontrold
+
 # Set device ID
 sed -i "s/#DEVICEID#/$config_deviceid/g" /etc/vcontrold/vcontrold.xml
 
