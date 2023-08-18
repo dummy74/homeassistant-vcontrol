@@ -17,6 +17,16 @@ config_tty=$(bashio::config 'tty')
 config_deviceid=$(bashio::config 'device_id')
 config_commands=$(bashio::config 'commands')
 
+
+echo 'ls /'
+ls -la /
+
+echo 'ls /etc'
+ls -la /etc
+
+echo 'ls /etc/vcontrold'
+ls -la /etc/vcontrold
+
 # Cleanup scripts
 rm /etc/vcontrold/1_mqtt_commands.txt || /bin/true
 rm /etc/vcontrold/2_mqtt.tmpl || /bin/true
@@ -45,12 +55,6 @@ do
     echo 'fi' >> /etc/vcontrold/2_mqtt.tmpl
 done
 
-echo 'ls /etc'
-ls /etc
-
-echo 'ls /etc/vcontrold'
-ls /etc/vcontrold
-
 # Set device ID
 sed -i "s/#DEVICEID#/$config_deviceid/g" /etc/vcontrold/vcontrold.xml
 
@@ -59,6 +63,8 @@ if bashio::config.true 'debug'; then
 else
     sed -i "s/#DEBUG#/n/g" /etc/vcontrold/vcontrold.xml
 fi
+
+cat /etc/vcontrold/vcontrold.xml
 
 ## Run your program
 if [ "$VCONTROL_HOST" = "localhost" ] ; then
