@@ -28,4 +28,4 @@ RUN \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* vcontrold
 
 # Copy root filesystem
-COPY rootfs /
+COPY rootfs/etc/* /etc/
