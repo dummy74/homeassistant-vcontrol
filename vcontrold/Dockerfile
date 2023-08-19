@@ -28,4 +28,15 @@ RUN \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* vcontrold
 
 # Copy root filesystem
-COPY rootfs/etc/* /etc/
+#COPY rootfs /
+
+# Copy data for add-on
+ADD rootfs/etc/vcontrold/vcontrold.xml /etc/vcontrold/
+ADD rootfs/etc/vcontrold/vito.xml /etc/vcontrold/
+
+# Create a user and group for vcontrold
+RUN adduser -S -D -h /home/vcontrol vcontrol vcontrol && \
+    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel && \
+    addgroup vcontrol audio && \
+    addgroup vcontrol wheel && \
+    addgroup vcontrol dialout
