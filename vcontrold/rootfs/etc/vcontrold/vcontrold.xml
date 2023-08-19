@@ -13,9 +13,9 @@
       <logging>
         <file>/dev/stdout</file>
         <syslog>n</syslog>
-        <debug>#DEBUG#</debug>
+        <debug>y</debug>
       </logging>
-      <device ID="#DEVICEID#"/>
+      <device ID="20C2"/>
     </config>
   </unix>
   <units>
