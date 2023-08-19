@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM alexandreio/aarch64-homeassistant-vcontrol:1.8.4 # $BUILD_FROM
 
 ENV VCONTROLD_VERSION "v0.98.12"
 
