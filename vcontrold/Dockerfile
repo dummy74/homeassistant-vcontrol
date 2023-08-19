@@ -33,7 +33,7 @@ RUN \
 # Copy data for add-on
 ADD rootfs/etc/vcontrold/vcontrold.xml /etc/vcontrold/
 ADD rootfs/etc/vcontrold/vito.xml /etc/vcontrold/
-ADD rootfs/etc/services.d/vcontrold/run /etc/services.d/vcontrol/run
+COPY rootfs/etc/services.d/ /etc/services.d/
 
 # Create a user and group for vcontrold
 RUN adduser -S -D -h /home/vcontrol vcontrol vcontrol && \
