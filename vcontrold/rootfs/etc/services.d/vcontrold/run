@@ -18,14 +18,14 @@ config_deviceid=$(bashio::config 'device_id')
 config_commands=$(bashio::config 'commands')
 
 
-echo 'ls /'
-ls -la /
+bashio::log.info 'ls /'
+bashio::log.info $(ls -la /)
 
-echo 'ls /etc'
-ls -la /etc
+bashio::log.info 'ls /etc'
+bashio::log.info $(ls -la /etc)
 
-echo 'ls /etc/vcontrold'
-ls -la /etc/vcontrold
+bashio::log.info 'ls /etc/vcontrold'
+bashio::log.info $(ls -la /etc/vcontrold)
 
 # Cleanup scripts
 rm /etc/vcontrold/1_mqtt_commands.txt || /bin/true
@@ -64,7 +64,7 @@ else
     sed -i "s/#DEBUG#/n/g" /etc/vcontrold/vcontrold.xml
 fi
 
-cat /etc/vcontrold/vcontrold.xml
+bashio::log.info $(cat /etc/vcontrold/vcontrold.xml)
 
 ## Run your program
 if [ "$VCONTROL_HOST" = "localhost" ] ; then
