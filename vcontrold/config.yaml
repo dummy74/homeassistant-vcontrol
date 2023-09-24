@@ -18,43 +18,43 @@ options:
   mqtt_topic: "openv"
   debug: false
   commands:
-    - getTempA:FLOAT
-    - getTempWWist:FLOAT
-    - getTempWWsoll:FLOAT
-    - getTempKist:FLOAT
-    - getTempKsoll:FLOAT
-    - getTempVListM2:FLOAT
-    - getTempKol:FLOAT
-    - getTempSpu:FLOAT
-    - getTempRaumNorSollM1:FLOAT
-    - getTempRaumNorSollM2:FLOAT
-    - getTempRaumRedSollM1:FLOAT
-    - getTempRaumRedSollM2:FLOAT
-    - getBrennerStatus:FLOAT
-    - getBrennerStarts:FLOAT
-    - getBrennerStunden1:FLOAT
-    - getBrennerStunden2:FLOAT
-    - getPumpeStatusM1:FLOAT
-    - getPumpeStatusSp:FLOAT
-    - getPumpeStatusZirku:FLOAT
-    - getPumpeStatusM2:FLOAT
-    - getMischerM1:FLOAT
-    - getMischerM2:FLOAT
-    - getMischerM3:FLOAT
-    - getError0:STRING
-    - getError1:STRING
-    - getError2:STRING
-    - getError3:STRING
-    - getError4:STRING
-    - getError5:STRING
-    - getError6:STRING
-    - getError7:STRING
-    - getError8:STRING
-    - getError9:STRING
-    - getNeigungM1:FLOAT
-    - getNeigungM2:FLOAT
-    - getNiveauM1:FLOAT
-    - getNiveauM2:FLOAT
+  - getBetriebArtM1Test:STRING
+  - getBetriebArtM1:STRING
+  - getBetriebSparM1:STRING
+  - getBetriebPartyM1:STRING
+  - getBetriebArtM2:STRING
+  - getBetriebSparM2:STRING
+  - getBetriebPartyM2:STRING
+  - getNeigungM1:FLOAT
+  - getNiveauM1:FLOAT
+  - getTempPartyM1:FLOAT
+  - getTempA:FLOAT
+  - getTempRaumNorSollM1:FLOAT
+  - getTempRaumRedSollM1:FLOAT
+  - getTempKist:FLOAT
+  - getTempKsoll:FLOAT
+  - getTempAbgas:FLOAT
+  - getTempSTSSOL:FLOAT
+  - getTempVListM1:FLOAT
+  - getTempVLsollM1:FLOAT
+  - getTempRL17A:FLOAT
+  - getTempStp:FLOAT
+  - getTempWWist:FLOAT
+  - getTempWWsoll:FLOAT
+  - getBrennerStarts:FLOAT
+  - getBrennerStunden1:FLOAT
+  - getBrennerStunden2:FLOAT
+  - getLeistungIst:FLOAT
+  - getPumpeStatusIntern:FLOAT
+  - getPumpeDrehzahlIntern:FLOAT
+  - getPumpeStatusM1:FLOAT
+  - getPumpeStatusSp:FLOAT
+  - getPumpeStatusZirku:FLOAT
+  - getUmschaltventil:STRING
+  - getTimerM1Mo:STRING
+  - getTimerWWMo:STRING
+  - getDevType:STRING
+  - getSystemTime:STRING
 schema:
   tty: "str"
   refresh: "int"
@@ -73,7 +73,7 @@ image: "alexandreio/{arch}-homeassistant-vcontrol"
 usb: true
 apparmor: false
 ports:
-  3002/tcp: null
+  3002/tcp: 3002
 ports_description:
   3002/tcp: "Vcontrol deamon"
 services:
