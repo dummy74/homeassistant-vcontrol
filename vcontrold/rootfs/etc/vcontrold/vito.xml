@@ -979,6 +979,12 @@
       <device ID="2053"/>
     </command>
     <!-- BETRIEBSARTEN -->
+    <command name="getBetriebArtM1Test" protocmd="getaddr">
+      <addr>2323</addr>
+      <len>1</len>
+      <unit>BA</unit>
+      <description>Betriebsart M1</description>
+    </command>
     <command name="getBetriebArtM1" protocmd="getaddr">
       <addr>2301</addr>
       <len>1</len>
